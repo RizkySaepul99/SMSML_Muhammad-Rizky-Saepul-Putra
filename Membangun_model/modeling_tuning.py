@@ -19,7 +19,7 @@ dagshub.init(
 mlflow.set_experiment("EAFC26_OVR_Advanced")
 
 # LOAD DATA
-df = pd.read_csv("Membangun_model\EAFC26_preprocessing.csv")
+df = pd.read_csv("Membangun_model/EAFC26_preprocessing.csv")
 
 X = df.drop(columns=["OVR"])
 y = df["OVR"]
@@ -89,5 +89,6 @@ with mlflow.start_run():
 
     with open("model_metadata.json", "w") as f:
         json.dump(metadata, f, indent=4)
+
 
     mlflow.log_artifact("model_metadata.json")
